@@ -1,9 +1,9 @@
 const loader = document.getElementById("loading-screen");
-const loadWords = ["Fetching confidence...", "Loading surprise...", "Ready! Let's go~"]
+const loadWords = ["Calculating your IQ...", "Error: IQ too low...", "Just kidding, let's go! 🤡"]
 const loadingText = document.getElementById("loading-text");
 let index = 0;
-const activeTitle = "yayy ur back ❤️";
-const inactiveTitle = "WAIT, don't go! 🥺";
+const activeTitle = "donkey's back! 🫏😂";
+const inactiveTitle = "HEY DONKEY, come back! 🫏";
 const correctButtons = document.querySelectorAll(".correctBtn");
 const wrongButtons = document.querySelectorAll(".btn");
 const page1 = document.getElementById("page1");
@@ -131,7 +131,7 @@ wrongButtons.forEach(button => {
             switchPage(page4, notPage5);
             fadeIn(notPage5);
         } else if (button.parentElement.id === "notpage4" || button.parentElement.id === "notpage5") {
-            alert("noooo, you left 😔 refresh the page if you want to give me another chance!");
+            alert("You escaped the donkey farm! 🫏💨 Refresh if you want more jokes!");
         } else if (button.parentElement.id === "page6") {
             switchPage(page6, notPage7);
             fadeIn(notPage7);

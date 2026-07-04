@@ -1,10 +1,10 @@
 :root {
-    --primary-color: #fab3c1;
-    --secondary-color: #f7d6e0;
-    --accent-color: #fb9fb1;
-    --light-cream: #f1f5f9;
-    --warm-gold: #8b5e5e;
-    --text-color: #8b5e5e;
+    --primary-color: #a3d9a5; /* Light Green */
+    --secondary-color: #e8f5e9; /* Very Light Green */
+    --accent-color: #66bb6a; /* Vibrant Green */
+    --light-cream: #f1f8e9;
+    --warm-gold: #2e7d32; /* Dark Green Text */
+    --text-color: #2e7d32;
     --text-light: #f1f5f9;
 }
 
@@ -122,7 +122,7 @@ h1 {
 .highlight {
     font-weight: 600;
     color: var(--accent-color);
-    border: #fb9fb1 2px solid;
+    border: var(--accent-color) 2px solid;
     border-radius: 9999px;
     padding: 5px 10px;
 }
