@@ -4,6 +4,29 @@ const loadingText = document.getElementById("loading-text");
 let index = 0;
 const activeTitle = "donkey's back! 🫏😂";
 const inactiveTitle = "HEY DONKEY, come back! 🫏";
+
+// Dynamic text logic
+const urlParams = new URLSearchParams(window.location.search);
+const dynamicWord = urlParams.get('text') || 'donkey';
+
+function applyDynamicText() {
+    // Update the main prank text
+    const dynamicTextElement = document.getElementById("dynamic-text");
+    if (dynamicTextElement) {
+        dynamicTextElement.textContent = `You are still a ${dynamicWord} 🫏😂`;
+    }
+
+    // Update all other occurrences of the word
+    const dynamicWordElements = document.querySelectorAll(".dynamic-word-class");
+    dynamicWordElements.forEach(el => {
+        el.innerHTML = el.innerHTML.replace(/donkey/gi, dynamicWord);
+    });
+
+    // Update titles
+    document.title = `made for you ${dynamicWord} ❤️`;
+}
+
+applyDynamicText();
 const correctButtons = document.querySelectorAll(".correctBtn");
 const wrongButtons = document.querySelectorAll(".btn");
 const page1 = document.getElementById("page1");
@@ -86,9 +109,9 @@ window.addEventListener("load", function() {
 
 document.addEventListener("visibilitychange", () => {
     if (document.hidden) {
-        document.title = inactiveTitle;
+        document.title = inactiveTitle.replace(/DONKEY/gi, dynamicWord.toUpperCase());
     } else {
-        document.title = activeTitle;
+        document.title = activeTitle.replace(/donkey/gi, dynamicWord);
     }
 });
 
